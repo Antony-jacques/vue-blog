@@ -1,6 +1,5 @@
 import { ref } from "vue";
 
-
 const getPosts = () => {
     const posts = ref([])
 
@@ -15,9 +14,7 @@ const getPosts = () => {
         }
 
         const data = await response.json()
-        console.log(data, 'data')
         posts.value = data
-        console.log('posts', posts)
         } catch (err) {
         error.value = err.message
         }
