@@ -7,16 +7,21 @@ const getPost = (id) => {
 
     const load = async () => {
         try {
-        let response = await fetch('http://localhost:3000/posts/' + id);
+          // simulate delay
+          await new Promise(resolve => {
+            setTimeout(resolve, 2000)
+          })
 
-        if(!response.ok){
+          let response = await fetch('http://localhost:3000/posts/' + id);
+
+          if(!response.ok){
             throw Error('That post does not exist')
-        }
+          }
 
-        const data = await response.json()
-        post.value = data
+          const data = await response.json()
+          post.value = data
         } catch (err) {
-        error.value = err.message
+          error.value = err.message
         }
     }
 

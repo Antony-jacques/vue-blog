@@ -7,16 +7,20 @@ const getPosts = () => {
 
     const load = async () => {
         try {
-        let response = await fetch('http://localhost:3000/posts');
+          // simulate delay
+          await new Promise(resolve => {
+            setTimeout(resolve, 2000)
+          })
+          let response = await fetch('http://localhost:3000/posts');
 
-        if(!response.ok){
+          if(!response.ok){
             throw Error('There is an error')
-        }
+          }
 
-        const data = await response.json()
-        posts.value = data
+          const data = await response.json()
+          posts.value = data
         } catch (err) {
-        error.value = err.message
+          error.value = err.message
         }
     }
 
