@@ -1,8 +1,8 @@
 {
     "posts": [
         {
-            "title": "first post",
-         "id": 1,
+          "title": "first post",
+          "id": 1,
           "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, adipisci quibusdam aut recusandae tempore asperiores corporis provident dolorem, ratione nihil temporibus nam eius labore ",
           "tags": ["webdev", "coding", "news"]
         
