@@ -19,3 +19,4 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 json-server --watch data/db.json 
+https://github.com/iamshaunjp/Vue-3-Firebase
