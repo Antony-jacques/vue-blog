@@ -18,7 +18,8 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router'
 export default {
   setup(){
     const title = ref('')
@@ -26,9 +27,10 @@ export default {
     const tag = ref('')
     const tags = ref([])
 
+    const router = useRouter()
+
     const handleKeydown = () => {
       if(!tags.value.includes(tag.value)){
-        // tag.value = tag.value.replace(/\s/, '') // removes all whitespace
         tag.value = tag.value.trim() // removes all whitespace
         tags.value.push(tag.value)
         
@@ -55,7 +57,8 @@ export default {
         
       }
 
-      console.log(newPost)
+      router.push({ name:'Home'})
+
     }
     return {title, body, tag, tags, handleKeydown, handleSubmit}
   }
