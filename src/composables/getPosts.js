@@ -21,7 +21,7 @@ const getPosts = () => {
         }
     }
 
-    return { posts, error, load}
+    return { posts, error, load }
 }
 
 export default getPosts
