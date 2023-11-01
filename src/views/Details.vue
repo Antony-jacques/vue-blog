@@ -18,7 +18,6 @@ export default {
   components: { Spinner },
   setup(props) {
     const route = useRoute() // get the route of the page that we are on
-    console.log(route)
 
     const { post, error, load } = getPost(route.params.id);
     load();
