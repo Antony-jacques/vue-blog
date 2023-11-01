@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { projectFirestore } from '@/firebase/config';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 export default {
@@ -48,11 +49,9 @@ export default {
       }
 
       try {
-        await fetch('http://localhost:3000/posts',{
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newPost)
-          })
+
+        const res = projectFirestore.collection('posts').add(newPost);
+
       } catch (error) {
         
       }
