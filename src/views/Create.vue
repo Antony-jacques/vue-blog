@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { projectFirestore } from '@/firebase/config';
+import { projectFirestore, timestamp } from '@/firebase/config';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
 export default {
@@ -36,8 +36,6 @@ export default {
         tags.value.push(tag.value)
         
       }
-
-      
       tag.value = '' 
     }
     
@@ -45,7 +43,8 @@ export default {
       const newPost = {
         title: title.value,
         body: body.value,
-        tags: tags.value
+        tags: tags.value,
+        createdAt: timestamp()
       }
 
       try {
