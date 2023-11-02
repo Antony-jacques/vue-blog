@@ -10,7 +10,7 @@
 
 <script>
 import getPost from "../composables/getPost";
-import Spinner from '../components/Spinner';
+import Spinner from '../components/Spinner.vue';
 
 import { useRoute, useRouter } from 'vue-router'
 import { projectFirestore } from "@/firebase/config";
